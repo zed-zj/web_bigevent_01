@@ -15,7 +15,7 @@ $(function () {
 
 
 })
-
+// 渲染页面函数
 function getUserInfo() {
   $.ajax({
     url: '/my/userinfo',
@@ -27,7 +27,7 @@ function getUserInfo() {
       if (res.status !== 0) {
         return layui.layer.msg(res.message)
       }
-      layui.layer.msg(res.message)
+      // layui.layer.msg(res.message)
       // 成功就根据服务器返回的数据来渲染页面
       renderAvatar(res.data)
     },
@@ -41,6 +41,7 @@ function getUserInfo() {
     // }
   })
 }
+// 渲染头像函数
 function renderAvatar(user) {
   // 获取昵称,然后修改头像后的欢迎语
   var name = user.nickname || user.username
